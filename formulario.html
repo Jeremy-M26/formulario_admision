@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base</title>
+    <link href="styles.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <a id="logo1" href="index.html"><img src="Logo-Unad-inicio-1.png" alt="UNAD" ></a>
+
+    <h2 id="titulo_1">"Formulario de solicitud de admision"</h1>
+
+<div class="contenedor">
+    <form id="formu" method="post" action="insertar_datos.php">
+    <!--Dividir en otro renglon-->
+<div class="contenedor2">
+    <div class="separadores">
+    <span class="cabeceras">Información personal:</span>
+    </div>
+    <input type="hidden" id="idoculto" name="idoculto" required="true"/>
+    <div class="cuadrados1">
+        <label for="cedula">Cedula:</label><br/>
+        <input type="text" id="cedula" name="cedula" placeholder="Ej: 01300213521 (NO USAR GUIONES)" pattern="[0-9]{11,}" maxlength="11" autocomplete="off" required="true"/>
+    </div>
+    <div class="cuadrados1">
+        <label for="pasaporte">Pasaporte:</label><br/>
+        <input type="text" id="pasaporte" name="pasaporte" placeholder="Digite su numero de pasaporte" pattern="[0-9]{11,}" maxlength="11" autocomplete="off"/>
+    </div>
+    <div class="cuadrados1">
+        <label for="nombre">Nombre:</label></br>
+        <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" autocomplete="off" required="true"/>
+    </div>
+    <div class="cuadrados1">
+        <label for="apellido1">Primer apellido:</label><br/>
+        <input type="text" id="apellido1" name="apellido1" placeholder="Escribe tu primer apellido" autocomplete="off" required="true"/>
+    </div>
+    <div class="cuadrados1">
+        <label for="apellido2">Segundo apellido:</label><br/>
+        <input type="text" id="apellido2" name="apellido2" placeholder="Escribe tu segundo apellido" autocomplete="off"/>
+    </div>
+    <div class="cuadrados2">
+        <label for="nacionalidad">Nacionalidad:</label><br/>
+        <select name="nacionalidad" id="nacionalidad" required="true">
+            <option value="dominicana">Dominicana</option>
+            <option value="haitiano">Haitiana</option>
+            <option value="americano">Americana</option>
+            <option value="espanola">Española</option>
+            <option value="canadiense">Canadiense</option>
+            <option value="brasilena">Brasileña</option>
+        </select>
+    </div>
+    <div class="cuadrados2">
+        <label for="sexo">Sexo</label><br/>
+        <select name="sexo" id="sexo" required="true">
+            <option value="masculino">Masculino</option>
+            <option value="femenino">Femenino</option>
+        </select>
+    </div>
+    <div class="cuadrados2">
+        <label for="estado_civil">Estado civil:</label><br/>
+        <select name="estado_civil" id="estado_civil" required="true">
+            <option value="soltero">Soltero</option>
+            <option value="casado">Casado</option>
+            <option value="viudo">Viudo</option>
+        </select>
+    </div>
+    <div class="cuadrados1">
+        <label for="edad">Fecha de nacimiento:</label><br/>
+        <input type="date" id="edad" name="edad" min="1920-01-01" max="2004-12-31" required="true"/>
+    </div>
+    <div class="cuadrados2">
+        <label for="sangre">Tipo de sangre:</label><br/>
+        <select name="sangre" id="sangre" required="true">
+            <option value="indeterminada">Indeterminada</option>
+            <option value="sangre_a">A</option>
+            <option value="sangre_b">B</option>
+            <option value="sangre_ab">AB</option>
+            <option value="sangre_o">O</option>
+        </select>
+    </div>
+    <div class="cuadrados2">
+        <label for="religion">Religion:</label><br/>
+        <select name="religion" id="religion" required="true">
+            <option value="ninguna">Ninguna</option>
+            <option value="cristiano">Cristiano</option>
+            <option value="judio">Judio</option>
+            <option value="islam">Islam</option>
+            <option value="hinduismo">Hinduismo</option>
+            <option value="budismo">Budismo</option>
+        </select>
+    </div>
+</div>
+    <!--Dividir en otro renglon-->
+<div class="contenedor3">
+    <div class="separadores">
+        <span class="cabeceras">Información academica:</span>
+    </div>
+    <div class="cuadrados2">
+        <label for="carrera">Carrera a estudiar:</label><br/>
+        <select name="carrera" id="carrera" required="true">
+            <option value="software">Ingenieria de software</option>
+            <option value="enfermeria">Enfermeria</option>
+            <option value="psicologia">Psicologia</option>
+            <option value="contabilidad">Contabilidad</option>
+        </select>
+    </div>
+    <div class="cuadrados2">
+    <label for="grado_post">Selecciona el nivel a estudiar:</label><br/>
+    <select name="grado_post" id="grado_post" required="true">
+        <option value="grado">Grado</option>
+        <option value="post_grado">Post grado</option>
+    </select>
+    </div>
+    <div class="cuadrados1">
+    <label for="termino">Fecha de termino de estudios secundarios:</label><br/>
+    <input type="date" id="termino" name="termino" min="1950-01-01" max="2023-01-01" required="true"/>
+    </div>
+</div>
+    <!--Dividir en otro renglon-->
+<div class="contenedor4">
+    <div class="separadores">
+    <span class="cabeceras">Información residencial:</span>
+    </div>
+    <div class="cuadrados1">
+        <label for="direccion">Direccion:</label><br/>
+        <input type="text" id="direccion" name="direccion" placeholder="Escribe aqui tu direccion" autocomplete="off" required="true"/>
+    </div>
+    <div class="cuadrados2">
+        <label for="provincia">Provincia:</label><br/>
+        <select name="provincia" id="provincia" required="true">
+        <option value="azua">Azúa</option>
+        <option value="baoruco">Baoruco</option>
+        <option value="barahona">Barahona</option>
+        <option value="dajabon">Dajabón</option>
+        <option value="distrito_nacional">Distrito Nacional</option>
+        <option value="duarte">Duarte</option>
+        <option value="elias_pina">Elías Pina</option>
+        <option value="el_seibo">El Seibo</option>
+        <option value="espaillat">Espaillat</option>
+        <option value="hato_mayor">Hato Mayor</option>
+        <option value="independencia">Independencia</option>
+        <option value="la_altagracia">La Altagracia</option>
+        <option value="la_vega">La Vega</option>
+        <option value="la_romana">La Romana</option>
+        <option value="maria_trinidad_sanchez">Maria Trinidad Sanchez</option>
+        <option value="monsenor_nouel">Monseñor Nouel</option>
+        <option value="monte_cristi">Monte Cristi</option>
+        <option value="monte_plata">Monte Plata</option>
+        <option value="pedernales">Pedernales</option>
+        <option value="peravia">Peravia</option>
+        <option value="puerto_plata">Puerto Plata</option>
+        <option value="salcedo">Salcedo</option>
+        <option value="samana">Samana</option>
+        <option value="sanchez_ramirez">Sánchez Ramírez</option>
+        <option value="san_cristobal">San Cristobal</option>
+        <option value="san_jose_de_ocoa"> San Jose de Ocoa</option>
+        <option value="san_juan">San Juan</option>
+        <option value="san_pedro_de_macoris">San Pedro de Macorís</option>
+        <option value="santiago">Santiago</option>
+        <option value="santiago_rodriguez">Santiago Rodríguez</option>
+        <option value="santo_domingo">Santo Domingo</option>
+        <option value="valverde">Valverde</option>
+        </select>
+    </div>
+</div>
+    <!--Dividir en otro renglon-->
+<div class="contenedor5">
+    <div class="separadores">
+    <span class="cabeceras">Información de contacto:</span>
+    </div>
+    <div class="cuadrados1">
+        <label for="telefono">Telefono residencial:</label><br/>
+        <input type="tel" id="telefono" name="telefono" placeholder="Digita tu telefono residencial" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" autocomplete="off"/>
+    </div>
+    <div class="cuadrados1">
+        <label for="celular">Telefono celular:</label><br/>
+        <input type="tel" id="celular" name="celular" placeholder="Digita tu numero de celular" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" autocomplete="off" required="true"/>
+    </div>
+    <div class="cuadrados1">
+        <label for="email">Correo electronico:</label><br/>
+        <input type="email" id="email" name="email" placeholder="mike@ejemplo.com"  size="32" minlength="3" maxlength="64" autocomplete="off" required="true"/>
+    </div>
+</div>
+    <!--Dividir en otro renglon-->
+<div class="contenedor6">
+    <div class="separadores">
+    <span class="cabeceras">Información paterna:</span>
+    </div>
+    <div class="cuadrados1">
+        <label for="nombre_padre">Nombre:</label></br>
+        <input type="text" id="nombre_padre" name="nombre_padre" autocomplete="off"/>
+    </div>
+    <div class="cuadrados1">
+        <label for="apellidos_padre">Apellidos:</label><br/>
+        <input type="text" id="apellidos_padre" name="apellidos_padre"  autocomplete="off"/>
+    </div>
+    <div class="cuadrados1">
+        <label for="celular_padre">Telefono celular:</label><br/>
+        <input type="tel" id="celular_padre" name="celular_padre" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" autocomplete="off" />
+    </div>
+    <div class="separadores">
+    <span class="cabeceras">Información materna:</span>
+    </div>
+    <div class="cuadrados1">
+        <label for="nombre_madre">Nombre:</label></br>
+        <input type="text" id="nombre_madre" name="nombre_madre" autocomplete="off"/>
+    </div>
+    <div class="cuadrados1">
+        <label for="apellidos_madre">Apellidos:</label><br/>
+        <input type="text" id="apellidos_madre" name="apellidos_madre"  autocomplete="off"/>
+    </div>
+    <div class="cuadrados1">
+        <label for="celular_madre">Telefono celular:</label><br/>
+        <input type="tel" id="celular_madre" name="celular_madre" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" autocomplete="off"/>
+    </div>
+</div>
+    <!--Dividir en otro renglon-->
+    <div class="contenedor7x">
+        <a href="compromisoestudiantil.pdf" download>Acceder al manual de compromiso estudiantil</a>
+            <br/>
+        <div>
+            <input type="checkbox" id="acuerdo1" name="acuerdo1" value="acuerdo1" required="true" />
+            <label for="acuerdo1">Doy constancia de haber leido y estar de acuerdo con el manual antes visto.</label>
+          </div>
+          <br/>
+          <div>
+            <input type="checkbox" id="acuerdo2" name="acuerdo2" value="acuerdo2" required="true" />
+            <label for="acuerdo2">Doy fe que la informacion sumistrada es real y 100% veridica.</label>
+          </div>
+    <div class="submit_1_2">       
+        <input type="submit" value="Enviar solicitud"/>
+        <input type="reset" value="Restablecer solicitud"/>
+        </div>
+</div>
+    </form>
+</div>
+</body>
+</html>
+

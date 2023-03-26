@@ -1,28 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Base</title>
-    <link href="styles.css" rel="stylesheet" type="text/css" />
+    <link href="/formulario_admision/css/styles.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- jQuery Library -->
+    <script src="jquery-3.5.1.min.js"></script>
 </head>
 <body>
-    <a id="logo1" href="index.html"><img src="Logo-Unad-inicio-1.png" alt="UNAD" ></a>
+    <a id="logo1" href="index.html"><img src="/formulario_admision/css/Logo-Unad-inicio-1.png" alt="UNAD" ></a>
 
     <h2 id="titulo_1">"Formulario de solicitud de admision"</h1>
 
 <div class="contenedor">
-    <form id="formu" method="post" action="insertar_datos.php">
+    <form id="formu" target="_blank" method="post" action="insertar_datos.php">
     <!--Dividir en otro renglon-->
 <div class="contenedor2">
     <div class="separadores">
     <span class="cabeceras">Información personal:</span>
     </div>
-    <input type="hidden" id="idoculto" name="idoculto" required="true"/>
+    <input type="hidden" id="id" name="id" required="true"/>
+    <input type="hidden" id="estado" name="estado" value="pendiente">
     <div class="cuadrados1">
         <label for="cedula">Cedula:</label><br/>
-        <input type="text" id="cedula" name="cedula" placeholder="Ej: 01300213521 (NO USAR GUIONES)" pattern="[0-9]{11,}" maxlength="11" autocomplete="off" required="true"/>
+        <input type="text" id="cedula" name="cedula" placeholder="Ej: 013-0021352-1 (USAR GUIONES)" pattern="[0-9]{3}-[0-9]{7}-[0-9]{1}" minlength="13" maxlength="13" autocomplete="off" required="true"/>
     </div>
     <div class="cuadrados1">
         <label for="pasaporte">Pasaporte:</label><br/>
@@ -218,8 +222,13 @@
 </div>
     <!--Dividir en otro renglon-->
     <div class="contenedor7x">
-        <a href="compromisoestudiantil.pdf" download>Acceder al manual de compromiso estudiantil</a>
+        <div>
+        <a id="compromiso" href="compromisoestudiantil.pdf" download><i class="fa fa-file-pdf-o" style="font-size:25px;color:red"></i>Acceder al manual de compromiso estudiantil</a>
             <br/>
+            <br/>
+            <br/>
+
+        </div>
         <div>
             <input type="checkbox" id="acuerdo1" name="acuerdo1" value="acuerdo1" required="true" />
             <label for="acuerdo1">Doy constancia de haber leido y estar de acuerdo con el manual antes visto.</label>
@@ -229,10 +238,10 @@
             <input type="checkbox" id="acuerdo2" name="acuerdo2" value="acuerdo2" required="true" />
             <label for="acuerdo2">Doy fe que la informacion sumistrada es real y 100% veridica.</label>
           </div>
-    <div class="submit_1_2">       
-        <input type="submit" value="Enviar solicitud"/>
-        <input type="reset" value="Restablecer solicitud"/>
-        </div>
+    <div class="submit_1_2">
+        <button class="boton_sub" type="submit"><i class="fa fa-send" style="font-size:24px"></i>Enviar solicitud</button>
+        <button class="boton_res" type="reset"><i class="fa fa-trash" style="font-size:24px"></i>Restablecer solicitud</button>
+    </div>
 </div>
     </form>
 </div>

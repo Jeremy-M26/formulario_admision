@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: url("fondo.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+}
+/* Inicio y base */
+#logo1{
+    align-content: center;
+    margin-left: 400px;
+    margin-right: 400px;
+    padding: 0;
+}
+html{
+    height: 100%;
+}
+/*Tabla de datos*/
+#table_title{
+    margin: 10px;
+    font-family: 'Segoe UI';
+    font-weight: bold;
+}
+.contenedor_tabla{
+    width: 108%;
+    vertical-align: middle;
+    margin: 20px 0px 0px -40px ;
+    background-color: #ffffffad;
+    padding: 10px;
+    border-radius: 5px;
+}
+.data_table, th, td{
+    margin: 10px;
+    vertical-align: middle;
+    float: center;
+    background-color: #00000000;
+    height: 100%;
+    padding: 8px 2px 8px 2px;
+}
+td{
+    border: 1px solid;
+}
+th{
+    background-color: #cecece;
+    border: 1px solid;
+}
+

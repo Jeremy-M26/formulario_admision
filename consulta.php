@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="styles.css" rel="stylesheet" type="text/css" />
+    <link href="/formulario_admision/css/styles.css" rel="stylesheet" type="text/css" />
      <title>Document</title>
 </head>
 <body>
-    <a id="logo1" href="index.html"><img src="Logo-Unad-inicio-1.png" alt="UNAD" ></a>
+    <a id="logo1" href="index.html"><img src="/formulario_admision/css/Logo-Unad-inicio-1.png" alt="UNAD" ></a>
     <header>
         <h1 class="consult_h1">"Consultar solicitud"</h1>
     </header>

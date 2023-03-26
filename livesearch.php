@@ -4,7 +4,7 @@ if(isset($_POST['input'])){
 
     $input = $_POST['input'];
 
-    $sql = "SELECT * FROM admision WHERE cedula LIKE '{$input}%' OR pasaporte LIKE '{$input}%' OR nombre LIKE '{$input}%' OR primer_apellido LIKE '{$input}%' OR segundo_apellido LIKE '{$input}%' OR nacionalidad LIKE '{$input}%' OR sexo LIKE '{$input}%' OR carrera_a_estudiar LIKE '{$input}%' OR idoculto LIKE '{$input}%' LIMIT 3 ";
+    $sql = "SELECT * FROM admision WHERE cedula LIKE '{$input}%' OR pasaporte LIKE '{$input}%' OR nombre LIKE '{$input}%' OR primer_apellido LIKE '{$input}%' OR segundo_apellido LIKE '{$input}%' OR nacionalidad LIKE '{$input}%' OR sexo LIKE '{$input}%' OR carrera_a_estudiar LIKE '{$input}%' OR id LIKE '{$input}%' LIMIT 3 ";
 
     $resultado = mysqli_query($conexion, $sql);
 
@@ -25,8 +25,9 @@ if(isset($_POST['input'])){
         <th>Sexo</th>
         <th>Estado civil</th>
         <th>Fecha de nacimiento</th>
-        <th>Tipo de sangre</th>
         <th>Carrera a estudiar</th>
+        <th>Estado de la solicitud</th>
+        <th>Comentario</th>
     </tr>
 </thead>
 
@@ -35,7 +36,7 @@ if(isset($_POST['input'])){
         
         while($row = mysqli_fetch_assoc($resultado)){
 
-            $idoculto = $row['idoculto'];
+            $id = $row['id'];
             $cedula = $row['cedula'];
             $pasaporte = $row['pasaporte'];
             $nombre = $row['nombre'];
@@ -45,11 +46,12 @@ if(isset($_POST['input'])){
             $sexo = $row['sexo'];
             $estado_civil = $row['estado_civil'];
             $fecha_de_nacimiento = $row['fecha_de_nacimiento'];
-            $tipo_de_sangre = $row['tipo_de_sangre'];
             $carrera_a_estudiar = $row['carrera_a_estudiar'];
+            $estado = $row['estado'];
+            $comentario = $row['comentario'];
         ?>
         <tr>
-            <td><?php echo $idoculto;?></td>
+            <td><?php echo $id;?></td>
             <td><?php echo $cedula;?></td>
             <td><?php echo $pasaporte;?></td>
             <td><?php echo $nombre;?></td>
@@ -59,9 +61,11 @@ if(isset($_POST['input'])){
             <td><?php echo $sexo;?></td>
             <td><?php echo $estado_civil;?></td>
             <td><?php echo $fecha_de_nacimiento;?></td>
-            <td><?php echo $tipo_de_sangre;?></td>
             <td><?php echo $carrera_a_estudiar;?></td>
-        </tr>
+            <td><?php echo $estado;?></td>
+            <td><?php echo $comentario;?></td>
+       
+</tr>
         <?php
 
         }

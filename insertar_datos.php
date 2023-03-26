@@ -1,8 +1,8 @@
 <?php
   include("conexion.php");// el include es para llamar a un archivo, en este caso el de la conexion
 
+$id=$_POST["id"];
 $cedula=$_POST["cedula"];
-$idoculto=$_POST["idoculto"];
 $pasaporte=$_POST["pasaporte"];
 $nombre=$_POST["nombre"];
 $primer_apellido=$_POST["apellido1"];
@@ -27,14 +27,15 @@ $telefono_del_padre=$_POST["celular_padre"];
 $nombre_de_la_madre=$_POST["nombre_madre"];
 $apellidos_madre=$_POST["apellidos_madre"];
 $celular_madre=$_POST["celular_madre"];
+$estado=$_POST["estado"];
+$comentario=$_POST["comentario"];
 
-
-$sql = "INSERT INTO `admision`(`cedula`, `idoculto`, `pasaporte`, `nombre`, `primer_apellido`, `segundo_apellido`, `nacionalidad`, `sexo`, `estado_civil`, `fecha_de_nacimiento`, `tipo_de_sangre`, `religion`, `carrera_a_estudiar`, `nivel_a_estudiar`, `fecha_de_termino_de_estudios_secundarios`, `direccion`, `provincia`, `telefono_residencial`, `telefono_celular`, `correo_electronico`, `nombre_del_padre`, `apellidos_del_padre`, `telefono_del_padre`, `nombre_de_la_madre`, `apellidos_madre`, `celular_madre`) VALUES ('$cedula','$idoculto','$pasaporte','$nombre','$primer_apellido','$segundo_apellido','$nacionalidad','$sexo','$estado_civil','$fecha_de_nacimiento','$tipo_de_sangre','$religion','$carrera_a_estudiar','$fecha_de_termino_de_estudios_secundarios','$direccion','$provincia','$telefono_residencial','$telefono_celular','$telefono_celular','$correo_electronico','$nombre_del_padre','$apellidos_del_padre','$telefono_del_padre','$nombre_de_la_madre','$apellidos_madre','$celular_madre')";
+$sql = "INSERT INTO `admision`( `id`,`cedula`, `pasaporte`, `nombre`, `primer_apellido`, `segundo_apellido`, `nacionalidad`, `sexo`, `estado_civil`, `fecha_de_nacimiento`, `tipo_de_sangre`, `religion`, `carrera_a_estudiar`, `nivel_a_estudiar`, `fecha_de_termino_de_estudios_secundarios`, `direccion`, `provincia`, `telefono_residencial`, `telefono_celular`, `correo_electronico`, `nombre_del_padre`, `apellidos_del_padre`, `telefono_del_padre`, `nombre_de_la_madre`, `apellidos_madre`, `celular_madre`,`estado`,`comentario` ) VALUES ('$id','$cedula','$pasaporte','$nombre','$primer_apellido','$segundo_apellido','$nacionalidad','$sexo','$estado_civil','$fecha_de_nacimiento','$tipo_de_sangre','$religion','$carrera_a_estudiar','$fecha_de_termino_de_estudios_secundarios','$direccion','$provincia','$telefono_residencial','$telefono_celular','$telefono_celular','$correo_electronico','$nombre_del_padre','$apellidos_del_padre','$telefono_del_padre','$nombre_de_la_madre','$apellidos_madre','$celular_madre','$estado','$comentario')";
 
 $resultado = mysqli_query($conexion, $sql);
 
 if ($resultado === TRUE) {
-    header("location:../index.html");
+    echo "La solicitud ha sido enviada!";
 } else {
     echo "Datos NO insertados";
 }

@@ -4,7 +4,6 @@
 }
 
 body{
-    background-image: url("fondo.png");
     background-repeat: no-repeat;
     background-size: 100%;
     background-attachment: fixed;
@@ -21,9 +20,9 @@ body{
 }
 
 #titulo_1{
-    color: black;
+    color: #ffffff;
     text-align: center;
-    padding: 10px ;
+    padding-top: 5px;
     font-family: sans-serif;
 }
 .titulo_c{
@@ -32,191 +31,21 @@ body{
     padding: 10px ;
     font-family: sans-serif;
 }
-.contenedor1, .contenedor2, .contenedor3, .contenedor4, .contenedor5, .contenedor6, .contenedor7x, .contenedor_inicio {
-    vertical-align: middle;
-    float: center;
-    margin: 10px 150px 10px 150px ;
-    background-color: #ffffffad;
-    height: 100%;
-    width: 1000px;
-    padding: 30px;
+
+/* Principal container */
+.container {
     border-radius: 5px;
-}
-.cuadrados1 label{
-    color: #000000;
-    font-family: 'Segoe UI';
-}
-.cuadrados2 label{
-    color: #000000;
-    font-family: 'Segoe UI';
-}
-.cuadrados1 input{
-    width: 100%;
-    padding: 0px;
-    background: transparent;
-    color: #747474;
-    border: none;
-    border-bottom: 1px solid rgb(0, 0, 0);
-    margin-bottom: 5px;
-}
-.cuadrados2 input{
-    padding: 0px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    border-bottom: 1px solid rgb(0, 0, 0);
-    margin-bottom: 5px;
-}
-.cuadrados1{
-    text-align: left;
-}
-/*Botones de envio y reset*/
-.boton_sub{
-    text-align: left;
-    background-color: green;
-    overflow: hidden;
-    border: none;
-    text-transform: uppercase;
-    cursor: pointer;
-    letter-spacing: 0px;
-    padding: 10px;
-    margin-top: 15px;
-    margin-left: 33%;
-    border-radius: 5px;
-}
-.boton_res{
-    text-align: right;
-    background-color: red;
-    overflow: hidden;
-    border: none;
-    text-transform: uppercase;
-    cursor: pointer;
-    letter-spacing: 0px;
-    padding: 10px;
-    margin-top: 15px;
-    border-radius: 5px;
-}
-.boton_sub:hover{
-    background-color: gray;
-}
-.boton_res:hover{
-    background-color: gray;
-}
-/*Fin botones de envio y reset*/
-/*Boton compromiso*/
-#compromiso{
-    border: 2px solid #000000;
-    border-radius: 5px;
-    height: 100px;
-    margin-left: 350px;
-    margin-top: 10px;
-    margin-bottom: 50px;
-    padding: 10px;
-    text-decoration: none;
-    text-align: center;
-    background-color: #00ffea;
-}
-#compromiso:hover{
-    background-color: gray;
-}
-/*Fin boton compromiso*/
-.boton1{
-    width:50px;
-    height:50px;
-    top: 50%;
-    left: 50%;
-    margin-top: -100px;
-    margin-left: 40%;
-    font-weight: bold;
-    width: 300px;
-    min-height: 20px;
-    font-size: 14px;
-    text-align: center;
-    vertical-align: middle ;
-    padding-top: 7px;
-    border-radius: 15px;
-    border-radius: 12px;
-    background-color: white;
-    vertical-align: middle;
-    padding-bottom: 15px;
-    
-}
-.boton2{
-    width:50px;
-    height:50px;
-    top: 50%;
-    left: 50%;
-    margin-top: -100px;
-    margin-left: 43.3%;
-    font-weight: bold;
-    width: 300px;
-    min-height: 20px;
-    font-size: 14px;
-    text-align: center;
-    vertical-align: middle ;
-    padding-top: 7px;
-    border-radius: 15px;
-    border-radius: 12px;
-    background-color: white;
-    vertical-align: middle;
-    padding-bottom: 15px;
-    
-}
-.boton3{
-    width:50px;
-    height:50px;
-    top: 50%;
-    left: 50%;
-    margin-top: -100px;
-    margin-left: 41.9%;
-    font-weight: bold;
-    width: 300px;
-    min-height: 20px;
-    font-size: 14px;
-    text-align: center;
-    vertical-align: middle ;
-    padding-top: 7px;
-    border-radius: 15px;
-    border-radius: 12px;
-    background-color: white;
-    vertical-align: middle;
-    padding-bottom: 15px;
-    
-}
-/*Botones inicio*/
-.boton1:link, .boton1:visited{
-    background-color: #01bdc4;
-    color: rgb(0, 0, 0);
-    padding: 20px 30px;
-    text-decoration: none;
+    background-color: #f2f2f2;
+    padding: 20px;
+    margin-bottom: 20px;
 }
 
-.boton1:hover, .boton1:active{
-    background-color: gray;
+/* Label */
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
 }
 
-.boton2:link, .boton2:visited{
-    background-color: #01bdc4;
-    color: rgb(0, 0, 0);
-    padding: 20px 30px;
-    text-decoration: none;
-}
-
-.boton2:hover, .boton2:active{
-    background-color: gray;
-}
-
-.boton3:link, .boton3:visited{
-    background-color: #01bdc4;
-    color: rgb(0, 0, 0);
-    padding: 20px 30px;
-    text-decoration: none;
-}
-
-.boton3:hover, .boton3:active{
-    background-color: gray;
-}
-/*Botones fin*/
 html{
     height: 100%;
 }
@@ -229,41 +58,11 @@ html{
     text-decoration-color: white;
 }
 /*Barra de busqueda*/
-.form_control{
-    background-color: rgb(255, 255, 255);
-    width: 400px;
-    height: 50px;
-    border-radius: 10px;
-    border: none;
-    padding: 10px;
-    vertical-align: middle;
-    margin: 0px 150px 0px 477px ;
-}
+
 /*Tabla de datos*/
 #table_title{
     margin: 10px;
     font-family: 'Segoe UI';
     font-weight: bold;
-}
-.contenedor_tabla{
-    vertical-align: middle;
-    margin: 10px 10px 10px 10px ;
-    background-color: #ffffffad;
-    height: 100%;
-    width: 1345px;
-    padding: 10px;
-    border-radius: 5px;
-}
-.data_table, th, td{
-    border: 2px solid;
-    margin: 10px;
-    vertical-align: middle;
-    float: center;
-    background-color: #ffffff;
-    height: 100%;
-    padding: 8px;
-}
-th{
-    background-color: #cecece;
 }
 

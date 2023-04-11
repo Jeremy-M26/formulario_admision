@@ -10,24 +10,24 @@ if(isset($_POST['input'])){
 
     if(mysqli_num_rows($resultado) > 0){?>
 
-<div class="contenedor_tabla" >
-<table class="data_table">
-<h1 id="table_title" >Solicitud</h1>
+<div class="container" >
+<table class="data_table ui celled table hover" style="width: 100%;">
+<h1 id="table_title" >Consulta de solicitud</h1>
 <thead>
     <tr>
-        <th>#</th>
-        <th>Cedula</th>
-        <th>Pasaporte</th>
-        <th>Nombre</th>
-        <th>Primer apellido</th>
-        <th>Segundo apellido</th>
-        <th>Nacionalidad</th>
-        <th>Sexo</th>
-        <th>Estado civil</th>
-        <th>Fecha de nacimiento</th>
-        <th>Carrera a estudiar</th>
-        <th>Estado de la solicitud</th>
-        <th>Comentario</th>
+        <th style="background-color: #cecece">#</th>
+        <th style="background-color: #cecece">Cedula</th>
+        <th style="background-color: #cecece">Nombre</th>
+        <th style="background-color: #cecece">Primer apellido</th>
+        <th style="background-color: #cecece">Segundo apellido</th>
+        <th style="background-color: #cecece">Nacionalidad</th>
+        <th style="background-color: #cecece">Sexo</th>
+        <th style="background-color: #cecece">Estado civil</th>
+        <th style="background-color: #cecece">Fecha de nacimiento</th>
+        <th style="background-color: #cecece">Carrera a estudiar</th>
+        <th style="background-color: #cecece">Fecha de la solicitud</th>
+        <th style="background-color: #cecece">Estado de la solicitud</th>
+        <th style="background-color: #cecece">Comentario</th>
     </tr>
 </thead>
 
@@ -38,7 +38,6 @@ if(isset($_POST['input'])){
 
             $id = $row['id'];
             $cedula = $row['cedula'];
-            $pasaporte = $row['pasaporte'];
             $nombre = $row['nombre'];
             $primer_apellido = $row['primer_apellido'];
             $segundo_apellido = $row['segundo_apellido'];
@@ -47,13 +46,13 @@ if(isset($_POST['input'])){
             $estado_civil = $row['estado_civil'];
             $fecha_de_nacimiento = $row['fecha_de_nacimiento'];
             $carrera_a_estudiar = $row['carrera_a_estudiar'];
+            $fecha_solicitud = $row['fecha_solicitud'];
             $estado = $row['estado'];
             $comentario = $row['comentario'];
         ?>
         <tr>
             <td><?php echo $id;?></td>
             <td><?php echo $cedula;?></td>
-            <td><?php echo $pasaporte;?></td>
             <td><?php echo $nombre;?></td>
             <td><?php echo $primer_apellido;?></td>
             <td><?php echo $segundo_apellido;?></td>
@@ -62,6 +61,7 @@ if(isset($_POST['input'])){
             <td><?php echo $estado_civil;?></td>
             <td><?php echo $fecha_de_nacimiento;?></td>
             <td><?php echo $carrera_a_estudiar;?></td>
+            <td><?php echo $fecha_solicitud;?></td>
             <td><?php echo $estado;?></td>
             <td><?php echo $comentario;?></td>
        

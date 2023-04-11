@@ -35,7 +35,7 @@ $sql = "INSERT INTO `admision`( `id`,`cedula`, `pasaporte`, `nombre`, `primer_ap
 $resultado = mysqli_query($conexion, $sql);
 
 if ($resultado === TRUE) {
-    echo "La solicitud ha sido enviada!";
+    header("Location: http://localhost/formulario_admision/submit.html");
 } else {
     echo "Datos NO insertados";
 }

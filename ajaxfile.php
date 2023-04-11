@@ -27,7 +27,8 @@ if($request == 1){
             primer_apellido like'%".$searchValue."%'  or 
             nacionalidad like'%".$searchValue."%'  or 
             sexo like'%".$searchValue."%'  or 
-            carrera_a_estudiar like'%".$searchValue."%' or 
+            carrera_a_estudiar like'%".$searchValue."%' or
+            fecha_solicitud like'%".$searchValue."%' or  
             estado like'%".$searchValue."%'
              ) ";
     }
@@ -50,10 +51,10 @@ if($request == 1){
     while ($row = mysqli_fetch_assoc($empRecords)) {
 
         // Update Button
-        $updateButton = "<button class='btn btn-sm btn-info updateUser' data-id='".$row['id']."' data-toggle='modal' data-target='#updateModal' >Editar</button>";
+        $updateButton = "<button class='btn btn-sm btn-primary btn-block pr-sm-0 updateUser' data-id='".$row['id']."' data-toggle='modal' data-target='#updateModal'>Editar</button>";
 
         // Delete Button
-        $deleteButton = "<button class='btn btn-sm btn-danger deleteUser' data-id='".$row['id']."'>Borrar solicitud</button>";
+        $deleteButton = "<button class='btn btn-sm btn-danger btn-block pr-sm-0 deleteUser' data-id='".$row['id']."'>Borrar solicitud</button>";
         
         $action = $updateButton." ".$deleteButton;
 
@@ -65,6 +66,7 @@ if($request == 1){
                 "nacionalidad" => $row['nacionalidad'],
                 "sexo" => $row['sexo'],
                 "carrera_a_estudiar" => $row['carrera_a_estudiar'],
+                "fecha_solicitud" => $row['fecha_solicitud'],
                 "estado" => $row['estado'],
                 "action" => $action,
                 "comentario" => $row['comentario']
@@ -105,6 +107,7 @@ if($request == 2){
             "nacionalidad" => $row['nacionalidad'],
             "sexo" => $row['sexo'],
             "carrera_a_estudiar" => $row['carrera_a_estudiar'],
+            "fecha_solicitud" => $row['fecha_solicitud'],
             "estado" => $row['estado'],
             "comentario" => $row['comentario'],
         );

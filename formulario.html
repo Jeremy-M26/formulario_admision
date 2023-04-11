@@ -4,49 +4,117 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Base</title>
+    <title>Formulario de admision</title>
     <link href="/formulario_admision/css/styles.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- jQuery Library -->
     <script src="jquery-3.5.1.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+    <style>
+        @media (min-width: 768px) {
+          .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+          }
+        }
+    </style>
 </head>
-<body>
-    <a id="logo1" href="index.html"><img src="/formulario_admision/css/Logo-Unad-inicio-1.png" alt="UNAD" ></a>
+<body style="background-color: #343a40;">
+
+        <!-- NAVBAR -->
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #c9e9ff;">
+        <a class="navbar-brand" href="/formulario_admision/index.html">Universidad Tecnologica Nacional</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/formulario_admision/index.html">Inicio <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Pensums</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/formulario_admision/consulta.php">Consultar solicitudes</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+</header>
 
     <h2 id="titulo_1">"Formulario de solicitud de admision"</h1>
 
-<div class="contenedor">
-    <form id="formu" target="_blank" method="post" action="insertar_datos.php">
+<form id="formu" class="needs-validation" target="_self" method="post" action="insertar_datos.php" novalidate>
     <!--Dividir en otro renglon-->
-<div class="contenedor2">
+<div class="container">
     <div class="separadores">
     <span class="cabeceras">Información personal:</span>
     </div>
     <input type="hidden" id="id" name="id" required="true"/>
     <input type="hidden" id="estado" name="estado" value="pendiente">
-    <div class="cuadrados1">
-        <label for="cedula">Cedula:</label><br/>
-        <input type="text" id="cedula" name="cedula" placeholder="Ej: 013-0021352-1 (USAR GUIONES)" pattern="[0-9]{3}-[0-9]{7}-[0-9]{1}" minlength="13" maxlength="13" autocomplete="off" required="true"/>
+
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+        <label for="cedula" class="col-sm-2 col-form-label">Cedula</label>
+        <input type="text" class="form-control" id="cedula" name="cedula" placeholder="Ej: 013-0021352-1 (USAR GUIONES) *" pattern="[0-9]{3}-[0-9]{7}-[0-9]{1}" minlength="13" maxlength="13" autocomplete="off" required/>
+        <div class="valid-feedback">Campo correcto.</div>
+        <div class="invalid-feedback">Por favor inserte su cedula con el formato correcto.</div>
+        </div>
+        <div class="form-group col-md-6">
+        <label for="pasaporte" class="col-sm-2 col-form-label">Pasaporte</label>
+        <input type="text" class="form-control" id="pasaporte" name="pasaporte" placeholder="Digite su numero de pasaporte, solo requerido si es extranjero" pattern="[0-9]{11,}" maxlength="11" autocomplete="off"/>
+        <div class="valid-feedback">Campo correcto.</div>
+        <div class="invalid-feedback">Por favor inserte su pasaporte con el formato correcto.</div>
+        </div>
     </div>
-    <div class="cuadrados1">
-        <label for="pasaporte">Pasaporte:</label><br/>
-        <input type="text" id="pasaporte" name="pasaporte" placeholder="Digite su numero de pasaporte" pattern="[0-9]{11,}" maxlength="11" autocomplete="off"/>
+    
+    <div class="form-row">
+        <div class="form-group col-md-6">
+        <label for="nombre" class="col-sm-2 col-form-label">Nombre</label>
+        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Escribe tu nombre *" autocomplete="off" required/>
+        <div class="valid-feedback">Campo correcto.</div>
+        <div class="invalid-feedback">Por favor inserte su nombre.</div>
+        </div>
+        <div class="form-group col-md-6">
+        <label for="apellido1" class="col-sm-7 col-form-label">Apellido 1</label>
+        <input type="text" class="form-control" id="apellido1" name="apellido1" placeholder="Escribe tu primer apellido *" autocomplete="off" required/>
+        <div class="valid-feedback">Campo correcto.</div>
+        <div class="invalid-feedback">Por favor inserte su apellido.</div>
+        </div>
+        <div class="form-group col-md-6">
+        <label for="apellido2" class="col-sm-7 col-form-label">Apellido 2</label>
+        <input type="text" class="form-control" id="apellido2" name="apellido2" placeholder="Escribe tu segundo apellido" autocomplete="off"/>
+        <div class="valid-feedback">Campo correcto.</div>
+        <div class="invalid-feedback">Por favor inserte su apellido.</div>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="sexo" class="col-sm-2 col-form-label">Sexo</label>
+            <select class="form-control" name="sexo" id="sexo" required>
+                <option value="masculino">Masculino</option>
+                <option value="femenino">Femenino</option>
+            </select>
+        </div>
     </div>
-    <div class="cuadrados1">
-        <label for="nombre">Nombre:</label></br>
-        <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" autocomplete="off" required="true"/>
+
+        <div class="form-group">
+        <label for="edad" class="col-sm-12 col-form-label">Fecha de nacimiento:</label><br/>
+        <input class="form-control" type="date" id="edad" name="edad" min="1920-01-01" max="2004-12-31" required/>
+        <div class="valid-feedback">Campo correcto.</div>
+        <div class="invalid-feedback">Por favor introduzca su fecha de nacimiento de manera correcta.</div>
+        </div>
+
+    <div class="separadores">
+        <span class="cabeceras">Mas informaciones:</span>
     </div>
-    <div class="cuadrados1">
-        <label for="apellido1">Primer apellido:</label><br/>
-        <input type="text" id="apellido1" name="apellido1" placeholder="Escribe tu primer apellido" autocomplete="off" required="true"/>
-    </div>
-    <div class="cuadrados1">
-        <label for="apellido2">Segundo apellido:</label><br/>
-        <input type="text" id="apellido2" name="apellido2" placeholder="Escribe tu segundo apellido" autocomplete="off"/>
-    </div>
-    <div class="cuadrados2">
-        <label for="nacionalidad">Nacionalidad:</label><br/>
-        <select name="nacionalidad" id="nacionalidad" required="true">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+        <label for="nacionalidad" class="col-sm-3 col-form-label">Nacionalidad</label>
+        <select class="form-control" name="nacionalidad" id="nacionalidad" required>
             <option value="dominicana">Dominicana</option>
             <option value="haitiano">Haitiana</option>
             <option value="americano">Americana</option>
@@ -54,29 +122,18 @@
             <option value="canadiense">Canadiense</option>
             <option value="brasilena">Brasileña</option>
         </select>
-    </div>
-    <div class="cuadrados2">
-        <label for="sexo">Sexo</label><br/>
-        <select name="sexo" id="sexo" required="true">
-            <option value="masculino">Masculino</option>
-            <option value="femenino">Femenino</option>
-        </select>
-    </div>
-    <div class="cuadrados2">
-        <label for="estado_civil">Estado civil:</label><br/>
-        <select name="estado_civil" id="estado_civil" required="true">
+        </div>
+        <div class="form-group col-md-6">
+        <label for="estado_civil" class="col-sm-5 col-form-label">Estado civil</label>
+        <select class="form-control" name="estado_civil" id="estado_civil" required>
             <option value="soltero">Soltero</option>
             <option value="casado">Casado</option>
             <option value="viudo">Viudo</option>
         </select>
-    </div>
-    <div class="cuadrados1">
-        <label for="edad">Fecha de nacimiento:</label><br/>
-        <input type="date" id="edad" name="edad" min="1920-01-01" max="2004-12-31" required="true"/>
-    </div>
-    <div class="cuadrados2">
-        <label for="sangre">Tipo de sangre:</label><br/>
-        <select name="sangre" id="sangre" required="true">
+        </div>
+    <div class="form-group col-md-6">
+        <label for="sangre" class="col-sm-5 col-form-label">Tipo de sangre:</label><br/>
+        <select class="form-control" name="sangre" id="sangre" required>
             <option value="indeterminada">Indeterminada</option>
             <option value="sangre_a">A</option>
             <option value="sangre_b">B</option>
@@ -84,9 +141,9 @@
             <option value="sangre_o">O</option>
         </select>
     </div>
-    <div class="cuadrados2">
-        <label for="religion">Religion:</label><br/>
-        <select name="religion" id="religion" required="true">
+    <div class="form-group col-md-6">
+        <label for="religion" class="col-sm-5 col-form-label">Religion:</label><br/>
+        <select class="form-control" name="religion" id="religion">
             <option value="ninguna">Ninguna</option>
             <option value="cristiano">Cristiano</option>
             <option value="judio">Judio</option>
@@ -95,45 +152,53 @@
             <option value="budismo">Budismo</option>
         </select>
     </div>
+    </div>
 </div>
     <!--Dividir en otro renglon-->
-<div class="contenedor3">
+<div class="container">
     <div class="separadores">
         <span class="cabeceras">Información academica:</span>
     </div>
-    <div class="cuadrados2">
-        <label for="carrera">Carrera a estudiar:</label><br/>
-        <select name="carrera" id="carrera" required="true">
+<div class="form-row">
+    <div class="form-group col-md-6">
+        <label for="carrera" class="col-sm-10 col-form-label">Carrera a estudiar</label>
+        <select class="form-control" name="carrera" id="carrera" required>
             <option value="software">Ingenieria de software</option>
             <option value="enfermeria">Enfermeria</option>
             <option value="psicologia">Psicologia</option>
             <option value="contabilidad">Contabilidad</option>
         </select>
     </div>
-    <div class="cuadrados2">
-    <label for="grado_post">Selecciona el nivel a estudiar:</label><br/>
-    <select name="grado_post" id="grado_post" required="true">
+    <div class="form-group col-md-6">
+    <label for="grado_post" class="col-sm-10 col-form-label">Selecciona el nivel a estudiar</label>
+    <select class="form-control" name="grado_post" id="grado_post" required>
         <option value="grado">Grado</option>
         <option value="post_grado">Post grado</option>
     </select>
     </div>
-    <div class="cuadrados1">
-    <label for="termino">Fecha de termino de estudios secundarios:</label><br/>
-    <input type="date" id="termino" name="termino" min="1950-01-01" max="2023-01-01" required="true"/>
+</div>
+    <div class="form-group">
+    <label for="termino" class="col-sm-12 col-form-label">Fecha de termino de estudios secundarios</label>
+    <input class="form-control" type="date" id="termino" name="termino" min="1950-01-01" max="2023-01-01" required/>
+    <div class="valid-feedback">Campo correcto.</div>
+    <div class="invalid-feedback">Por favor seleccione la fecha de termino de sus estudios secundarios.</div>
     </div>
 </div>
     <!--Dividir en otro renglon-->
-<div class="contenedor4">
+<div class="container">
     <div class="separadores">
     <span class="cabeceras">Información residencial:</span>
     </div>
-    <div class="cuadrados1">
-        <label for="direccion">Direccion:</label><br/>
-        <input type="text" id="direccion" name="direccion" placeholder="Escribe aqui tu direccion" autocomplete="off" required="true"/>
+<div class="form-row">
+    <div class="form-group col-md-6">
+        <label for="direccion" class="col-sm-12 col-form-label">Direccion:</label>
+        <input class="form-control" type="text" id="direccion" name="direccion" placeholder="Escribe aqui tu direccion" autocomplete="off" required/>
+        <div class="valid-feedback">Campo correcto.</div>
+        <div class="invalid-feedback">Por favor escriba su direccion.</div>
     </div>
-    <div class="cuadrados2">
-        <label for="provincia">Provincia:</label><br/>
-        <select name="provincia" id="provincia" required="true">
+    <div class="form-group col-md-6">
+        <label for="provincia" class="col-sm-12 col-form-label">Provincia:</label>
+        <select class="form-control" name="provincia" id="provincia" required>
         <option value="azua">Azúa</option>
         <option value="baoruco">Baoruco</option>
         <option value="barahona">Barahona</option>
@@ -169,82 +234,124 @@
         </select>
     </div>
 </div>
+</div>
     <!--Dividir en otro renglon-->
-<div class="contenedor5">
+<div class="container">
     <div class="separadores">
     <span class="cabeceras">Información de contacto:</span>
     </div>
-    <div class="cuadrados1">
-        <label for="telefono">Telefono residencial:</label><br/>
-        <input type="tel" id="telefono" name="telefono" placeholder="Digita tu telefono residencial" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" autocomplete="off"/>
+<div class="form-row">
+    <div class="form-group col-md-6">
+        <label for="telefono" class="col-sm-12 col-form-label">Telefono residencial</label>
+        <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="Digita tu telefono residencial" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" autocomplete="off"/>
     </div>
-    <div class="cuadrados1">
-        <label for="celular">Telefono celular:</label><br/>
-        <input type="tel" id="celular" name="celular" placeholder="Digita tu numero de celular" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" autocomplete="off" required="true"/>
+    <div class="form-group col-md-6">
+        <label for="celular" class="col-sm-12 col-form-label">Telefono celular</label>
+        <input type="tel" class="form-control" id="celular" name="celular" placeholder="Digita tu numero de celular *" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" autocomplete="off" required/>
+        <div class="valid-feedback">Campo correcto.</div>
+        <div class="invalid-feedback">Por favor digite su numero con el formato correcto EJ: ###-###-####.</div>
     </div>
-    <div class="cuadrados1">
-        <label for="email">Correo electronico:</label><br/>
-        <input type="email" id="email" name="email" placeholder="mike@ejemplo.com"  size="32" minlength="3" maxlength="64" autocomplete="off" required="true"/>
+</div>
+    <div class="form-group">
+        <label for="email" class="col-sm-12 col-form-label">Correo electronico</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="mike@ejemplo.com"  size="32" minlength="3" maxlength="64" autocomplete="off" required/>
+        <div class="valid-feedback">Campo correcto.</div>
+        <div class="invalid-feedback">Por favor introduzca su correo electronico con el formato correcto.</div>
     </div>
 </div>
     <!--Dividir en otro renglon-->
-<div class="contenedor6">
+<div class="container">
     <div class="separadores">
     <span class="cabeceras">Información paterna:</span>
     </div>
-    <div class="cuadrados1">
-        <label for="nombre_padre">Nombre:</label></br>
-        <input type="text" id="nombre_padre" name="nombre_padre" autocomplete="off"/>
+<div class="form-row">
+    <div class="form-group col-md-6">
+        <label for="nombre_padre"class="col-sm-12 col-form-label" >Nombre</label>
+        <input class="form-control" type="text" id="nombre_padre" name="nombre_padre" autocomplete="off"/>
     </div>
-    <div class="cuadrados1">
-        <label for="apellidos_padre">Apellidos:</label><br/>
-        <input type="text" id="apellidos_padre" name="apellidos_padre"  autocomplete="off"/>
+    <div class="form-group col-md-6">
+        <label for="apellidos_padre" class="col-sm-12 col-form-label">Apellidos</label>
+        <input class="form-control" type="text" id="apellidos_padre" name="apellidos_padre"  autocomplete="off"/>
     </div>
-    <div class="cuadrados1">
-        <label for="celular_padre">Telefono celular:</label><br/>
-        <input type="tel" id="celular_padre" name="celular_padre" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" autocomplete="off" />
+</div>
+    <div class="form-group">
+        <label for="celular_padre" class="col-sm-12 col-form-label">Telefono celular</label>
+        <input type="tel" class="form-control" id="celular_padre" name="celular_padre" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" autocomplete="off" />
     </div>
     <div class="separadores">
     <span class="cabeceras">Información materna:</span>
     </div>
-    <div class="cuadrados1">
-        <label for="nombre_madre">Nombre:</label></br>
-        <input type="text" id="nombre_madre" name="nombre_madre" autocomplete="off"/>
+<div class="form-row">
+    <div class="form-group col-md-6">
+        <label for="nombre_madre" class="col-sm-12 col-form-label">Nombre</label>
+        <input class="form-control" type="text" id="nombre_madre" name="nombre_madre" autocomplete="off"/>
     </div>
-    <div class="cuadrados1">
-        <label for="apellidos_madre">Apellidos:</label><br/>
-        <input type="text" id="apellidos_madre" name="apellidos_madre"  autocomplete="off"/>
-    </div>
-    <div class="cuadrados1">
-        <label for="celular_madre">Telefono celular:</label><br/>
-        <input type="tel" id="celular_madre" name="celular_madre" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" autocomplete="off"/>
+    <div class="form-group col-md-6">
+        <label for="apellidos_madre" class="col-sm-12 col-form-label">Apellidos</label>
+        <input class="form-control" type="text" id="apellidos_madre" name="apellidos_madre"  autocomplete="off"/>
     </div>
 </div>
-    <!--Dividir en otro renglon-->
-    <div class="contenedor7x">
-        <div>
-        <a id="compromiso" href="compromisoestudiantil.pdf" download><i class="fa fa-file-pdf-o" style="font-size:25px;color:red"></i>Acceder al manual de compromiso estudiantil</a>
-            <br/>
-            <br/>
-            <br/>
-
-        </div>
-        <div>
-            <input type="checkbox" id="acuerdo1" name="acuerdo1" value="acuerdo1" required="true" />
-            <label for="acuerdo1">Doy constancia de haber leido y estar de acuerdo con el manual antes visto.</label>
-          </div>
-          <br/>
-          <div>
-            <input type="checkbox" id="acuerdo2" name="acuerdo2" value="acuerdo2" required="true" />
-            <label for="acuerdo2">Doy fe que la informacion sumistrada es real y 100% veridica.</label>
-          </div>
-    <div class="submit_1_2">
-        <button class="boton_sub" type="submit"><i class="fa fa-send" style="font-size:24px"></i>Enviar solicitud</button>
-        <button class="boton_res" type="reset"><i class="fa fa-trash" style="font-size:24px"></i>Restablecer solicitud</button>
+    <div class="form-group">
+        <label for="celular_madre" class="col-sm-12 col-form-label">Telefono celular</label>
+        <input type="tel" class="form-control" id="celular_madre" name="celular_madre" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" autocomplete="off"/>
     </div>
+</div>
+
+    <!--Dividir en otro renglon-->
+<div class="container">
+    <div class="col-auto my-1 ml-auto">
+        <a class="btn btn-warning btn-sm btn-block" href="compromisoestudiantil.pdf" download><i class="fa fa-file-pdf-o" style="font-size:25px"></i> Acceder al manual de compromiso estudiantil</a>
+    </div>
+        <div class="custom-control custom-checkbox mb-3">
+            <input type="checkbox" class="custom-control-input" id="acuerdo1" name="acuerdo1" value="acuerdo1" required/>
+            <label for="acuerdo1" class="custom-control-label">Doy constancia de haber leido y estar de acuerdo con el manual antes visto.</label>
+            <div class="invalid-feedback">Es necesario confirmar que a leido los acuerdos!</div>
+        </div>
+        <div class="custom-control custom-checkbox mb-3">
+            <input type="checkbox" class="custom-control-input" id="acuerdo2" name="acuerdo2" value="acuerdo2" required/>
+            <label for="acuerdo2" class="custom-control-label">Doy fe que la informacion sumistrada es real y 100% veridica.</label>
+            <div class="invalid-feedback">Es necesario confirmar que a leido los acuerdos!</div>
+        </div>
+<div class="form-row">
+    <div class="col-auto my-1 ml-auto">
+        <button class="btn btn-primary btn-lg" type="submit"><i class="fa fa-send" style="font-size:24px"></i> Enviar solicitud</button>
+    </div>
+    <div class="col-auto my-1 mr-auto">
+        <button class="btn btn-danger btn-lg" type="reset"><i class="fa fa-trash" style="font-size:24px"></i> Restablecer solicitud</button>
+    </div>
+</div>
 </div>
     </form>
 </div>
+
+    <!-- FOOTER -->
+    <footer class="container">
+        <p class="float-right"><a href="#">Volver al inicio</a></p>
+        <p>&copy; 2023-2024 UTN. &middot; <a href="#">Acuerdo</a> &middot; <a href="#">Terminos</a></p>
+    </footer>
+    </main>
+
+<!-- Validation script -->
+<script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function() {
+      'use strict';
+      window.addEventListener('load', function() {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+          form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    })();
+    </script>
 </body>
 </html>
 

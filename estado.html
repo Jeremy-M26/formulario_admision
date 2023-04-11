@@ -15,10 +15,32 @@
         <script src="DataTables/datatables.min.js"></script>
         <!-- Fontawesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+        <!-- CSS DATATABLE -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.8/semantic.min.css" type="text/css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.semanticui.min.css" type="text/css">
+        <!-- Javascript -->
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.13.4/js/dataTables.semanticui.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.8/semantic.min.js"></script>
         <link rel="stylesheet" href="css/styles_2.css" type="text/css">
     </head>
     <body>
+        <!-- NAVBAR -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="/formulario_admision/index.html">Universidad Tecnologica Nacional</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="/formulario_admision/index.html">Volver a la pagina de inicio<span class="sr-only">(current)</span></a>
+                </li>
+            </div>
+          </nav>
+    </header>
 
         <div class='container'>
 
@@ -55,21 +77,23 @@
                 </div>
             </div>
 
+
             <!-- Table -->
             <div class="contenedor_tabla" >
             <h1 id="table_title">Administrar solicitudes de admision</h1>
-            <table id='userTable' class="data_table">
+            <table id='userTable' class="ui celled table hover" style="width: 100%;">
                 <thead>
                     <tr>
-                        <th>#</th>
-                        <th>Cedula</th>
-                        <th>Nombre</th>
-                        <th>Primer apellido</th>
-                        <th>Nacionalidad</th>
-                        <th>Sexo</th>
-                        <th>Carrera a estudiar</th>
-                        <th>Estado de la solicitud</th>
-                        <th>Administrar la solicitud</th>
+                        <th style="background-color: #cecece">#</th>
+                        <th style="background-color: #cecece">Cedula</th>
+                        <th style="background-color: #cecece">Nombre</th>
+                        <th style="background-color: #cecece">Primer apellido</th>
+                        <th style="background-color: #cecece">Nacionalidad</th>
+                        <th style="background-color: #cecece">Sexo</th>
+                        <th style="background-color: #cecece">Carrera a estudiar</th>
+                        <th style="background-color: #cecece">Fecha de la solicitud</th>
+                        <th style="background-color: #cecece">Estado de la solicitud</th>
+                        <th style="background-color: #cecece">Administrar la solicitud</th>
                     </tr>
                 </thead>
                 
@@ -98,6 +122,7 @@
                     { data: 'nacionalidad' },
                     { data: 'sexo' },
                     { data: 'carrera_a_estudiar' },
+                    { data: 'fecha_solicitud' },
                     { data: 'estado' },
                     { data: 'action' },
                 ]
@@ -156,6 +181,7 @@
                                 $('#nacionalidad').val('');
                                 $('#sexo').val('');
                                 $('#carrera_a_estudiar').val('');
+                                $('#fecha_solicitud').val('');
                                 $('#estado').val('');
                                 $('#comentario').val('');
                                 $('#txt_userid').val(0);
